@@ -24,4 +24,14 @@ public abstract class Rover {
                 + coordinateY + " "
                 + getDirection().getClass().getSimpleName().charAt(0);
     }
+
+    public void validateLocation() {
+        if (getCoordinateX() < plateau.getLowerBoundX() ||
+                getCoordinateX() > plateau.getUpperBoundX() ||
+                getCoordinateY() < plateau.getLowerBoundX() ||
+                getCoordinateY() > plateau.getUpperBoundY()) {
+            throw new RoverOutOfBoundException();
+        }
+    }
+
 }
