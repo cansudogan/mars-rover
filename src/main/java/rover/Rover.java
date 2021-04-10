@@ -1,9 +1,27 @@
 package rover;
 
-public interface Rover {
+import direction.Direction;
+import lombok.Data;
+import plateau.Plateau;
 
-     void turnRight();
-     void turnLeft();
-     void move();
-     void execute();
+@Data
+public abstract class Rover {
+    private final Plateau plateau;
+    private Direction direction;
+    private int coordinateX;
+    private int coordinateY;
+
+    abstract void turnRight();
+
+    abstract void turnLeft();
+
+    abstract void move();
+
+    abstract void execute();
+
+    public String broadcast() {
+        return coordinateX + " "
+                + coordinateY + " "
+                + getDirection().getClass().getSimpleName().charAt(0);
+    }
 }

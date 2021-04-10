@@ -1,30 +1,27 @@
 package rover;
 
-import direction.Direction;
-import lombok.Data;
 import plateau.Plateau;
 
-@Data
-public class MarsRover implements Rover{
 
-    private final Plateau plateau;
-    private Direction direction;
-    private int coordinateX;
-    private int coordinateY;
+public class MarsRover extends Rover {
+
+    public MarsRover(Plateau plateau) {
+        super(plateau);
+    }
 
     @Override
     public void turnRight() {
-        direction = getDirection().turnRight();
+        super.setDirection(getDirection().turnRight());
     }
 
     @Override
     public void turnLeft() {
-        direction =getDirection().turnLeft();
+        super.setDirection(getDirection().turnLeft());
     }
 
     @Override
     public void move() {
-        getDirection().move(this);
+        super.getDirection().move(this);
     }
 
     @Override
