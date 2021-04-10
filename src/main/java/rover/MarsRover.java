@@ -9,23 +9,22 @@ public class MarsRover extends Rover {
         super(plateau);
     }
 
+
     @Override
     public void turnRight() {
-        super.setDirection(getDirection().turnRight());
+        setDirection(getDirection().turnRight());
     }
 
     @Override
     public void turnLeft() {
-        super.setDirection(getDirection().turnLeft());
+        setDirection(getDirection().turnLeft());
     }
 
     @Override
     public void move() {
-        super.getDirection().move(this);
+        getDirection().move(this);
+        validateLocation();
     }
 
-    @Override
-    public void execute() {
 
-    }
 }
