@@ -1,30 +1,63 @@
 package rover;
 
+import command.DirectionOrder;
+import direction.Direction;
+import exception.RoverOutOfBoundException;
+import lombok.Data;
 import plateau.Plateau;
 
+import java.util.List;
 
-public class MarsRover extends Rover {
+@Data
+public class MarsRover {
+    private Plateau plateau;
+    private Direction direction;
+    private int coordinateX;
+    private int coordinateY;
 
-    public MarsRover(Plateau plateau) {
-        super(plateau);
+    public MarsRover(Plateau plateau, Direction direction, int coordinateX, int coordinateY) {
+        this.plateau = plateau;
+        this.direction = direction;
+        this.coordinateX = coordinateX;
+        this.coordinateY = coordinateY;
     }
 
 
-    @Override
     public void turnRight() {
         setDirection(getDirection().turnRight());
     }
 
-    @Override
+
     public void turnLeft() {
         setDirection(getDirection().turnLeft());
     }
 
-    @Override
     public void move() {
         getDirection().move(this);
         validateLocation();
     }
 
+
+    public void launch(List<DirectionOrder> directionOrders) {
+        for (DirectionOrder c : directionOrders) {
+            c.launch(this);
+        }
+    }
+
+
+    public String broadcast() {
+        return coordinateX + " "
+                + coordinateY + " "
+                + getDirection().getClass().getSimpleName().charAt(0);
+    }
+
+    public void validateLocation() {
+        if (getCoordinateX() < plateau.getLowerBoundX() ||
+                getCoordinateX() > plateau.getUpperBoundX() ||
+                getCoordinateY() < plateau.getLowerBoundX() ||
+                getCoordinateY() > plateau.getUpperBoundY()) {
+            throw new RoverOutOfBoundException();
+        }
+    }
 
 }

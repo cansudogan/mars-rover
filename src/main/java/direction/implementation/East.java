@@ -2,7 +2,8 @@ package direction.implementation;
 
 import direction.Direction;
 import lombok.ToString;
-import rover.Rover;
+import rover.MarsRover;
+
 @ToString
 public class East implements Direction {
     @Override
@@ -16,7 +17,7 @@ public class East implements Direction {
     }
 
     @Override
-    public void move(Rover rover) {
-        rover.setCoordinateX(rover.getCoordinateX() + 1);
+    public void move(MarsRover marsRover) {
+        marsRover.setCoordinateX(marsRover.getCoordinateX() + 1);
     }
 }

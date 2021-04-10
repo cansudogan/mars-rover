@@ -1,7 +1,7 @@
 package command;
 
-import rover.Rover;
+import rover.MarsRover;
 
 public interface DirectionOrder {
-    void launch(Rover rover);
+    void launch(MarsRover marsRover);
 }

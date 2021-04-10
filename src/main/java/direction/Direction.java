@@ -1,11 +1,12 @@
 package direction;
 
-import rover.Rover;
+import rover.MarsRover;
+
 
 public interface Direction {
     Direction turnRight();
 
     Direction turnLeft();
 
-    void move(Rover rover);
+    void move(MarsRover marsRover);
 }

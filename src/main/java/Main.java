@@ -2,7 +2,6 @@ import command.DirectionOrder;
 import command.DirectionOrders;
 import direction.Direction;
 import direction.Directions;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import plateau.Plateau;
@@ -33,7 +32,7 @@ public class Main {
         Plateau plateau = readPlateauInput(inputList.get(0));
         logger.info(plateau);
 
-        for (int i = 0; i < roverInput.size(); i += 2){
+        for (int i = 0; i < roverInput.size(); i += 2) {
             MarsRover marsRover = CreateMarsRover(roverInput.get(i), plateau);
             logger.info(marsRover);
             List<DirectionOrder> directionOrders = readCommand(roverInput.get(i + 1));
@@ -61,7 +60,7 @@ public class Main {
         BufferedReader reader = new BufferedReader(new InputStreamReader(in));
         String line;
 
-        while ((line = reader.readLine()) != null){
+        while ((line = reader.readLine()) != null) {
             input.add(line);
         }
         reader.close();
@@ -69,14 +68,14 @@ public class Main {
     }
 
 
-    public static Plateau readPlateauInput(String plateauInput){
+    public static Plateau readPlateauInput(String plateauInput) {
         String[] inputArray = plateauInput.split(" ");
         int UpperBoundX = Integer.parseInt(inputArray[0]);
         int UpperBoundY = Integer.parseInt(inputArray[1]);
-        return new Plateau(UpperBoundX,UpperBoundY);
+        return new Plateau(UpperBoundX, UpperBoundY);
     }
 
-    public static MarsRover CreateMarsRover(String positionInput, Plateau plateau){
+    public static MarsRover CreateMarsRover(String positionInput, Plateau plateau) {
         String[] inputArray = positionInput.split(" ");
         int initialCoordinateX = Integer.parseInt(inputArray[0]);
         int initialCoordinateY = Integer.parseInt(inputArray[1]);
