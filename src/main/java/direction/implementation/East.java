@@ -5,7 +5,9 @@ import rover.Rover;
 
 public class East implements Direction {
     @Override
-    public Direction turnRight() { return new South(); }
+    public Direction turnRight() {
+        return new South();
+    }
 
     @Override
     public Direction turnLeft() {
@@ -14,5 +16,6 @@ public class East implements Direction {
 
     @Override
     public void move(Rover rover) {
+        rover.setCoordinateX(rover.getCoordinateX() + 1);
     }
 }
