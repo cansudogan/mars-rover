@@ -1,6 +1,6 @@
-package command.implementation;
+package directionOrder.implementation;
 
-import command.DirectionOrder;
+import directionOrder.DirectionOrder;
 import lombok.ToString;
 import rover.MarsRover;
 

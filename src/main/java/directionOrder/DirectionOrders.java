@@ -1,8 +1,8 @@
-package command;
+package directionOrder;
 
-import command.implementation.Left;
-import command.implementation.Move;
-import command.implementation.Right;
+import directionOrder.implementation.Left;
+import directionOrder.implementation.Move;
+import directionOrder.implementation.Right;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
