@@ -2,6 +2,6 @@ package command;
 
 import rover.Rover;
 
-public interface Command {
+public interface DirectionOrder {
     void launch(Rover rover);
 }
