@@ -10,6 +10,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'junit:junit:4.12'
     compileOnly 'org.projectlombok:lombok:1.18.20'
     annotationProcessor 'org.projectlombok:lombok:1.18.20'
 
